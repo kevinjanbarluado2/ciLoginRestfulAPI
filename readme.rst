@@ -1,71 +1,92 @@
-###################
-What is CodeIgniter
-###################
+Create Database Tables
+**************
+To store user’s account information, a table needs to be created in the database. The following SQL creates a users table with some basic fields in MySQL database.
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+CREATE TABLE `users` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `first_name` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
+ `last_name` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
+ `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+ `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+ `phone` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
+ `created` datetime NOT NULL,
+ `modified` datetime NOT NULL,
+ `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1=Active | 0=Inactive ',
+ PRIMARY KEY (`id`)
 
-*******************
-Release Information
-*******************
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
 
-**************************
-Changelog and New Features
-**************************
+ Retrieve User Account Data via REST API:
+ ***************
+The following code performs a GET request to retrieve the user’s account data via CodeIgniter REST API.
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+// API key
+$apiKey = 'CODEX@123';
 
-*******************
-Server Requirements
-*******************
+// API auth credentials
+$apiUser = "admin";
+$apiPass = "1234";
 
-PHP version 5.6 or newer is recommended.
+// Specify the ID of the user
+$userID = 1; 
 
-It should work on 5.3.7 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
+// API URL
+$url = 'http://example.com/codeigniter/api/authentication/user/'.$userID;
 
-************
-Installation
-************
+// Create a new cURL resource
+$ch = curl_init($url);
 
-Please see the `installation section <https://codeigniter.com/userguide3/installation/index.html>`_
-of the CodeIgniter User Guide.
+curl_setopt($ch, CURLOPT_TIMEOUT, 30);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_ANY);
+curl_setopt($ch, CURLOPT_HTTPHEADER, array("X-API-KEY: " . $apiKey));
+curl_setopt($ch, CURLOPT_USERPWD, "$apiUser:$apiPass");
 
-*******
-License
-*******
+$result = curl_exec($ch);
 
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
+// Close cURL resource
+curl_close($ch);
 
-*********
-Resources
-*********
 
--  `User Guide <https://codeigniter.com/docs>`_
--  `Contributing Guide <https://github.com/bcit-ci/CodeIgniter/blob/develop/contributing.md>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community Slack Channel <https://codeigniterchat.slack.com>`_
+Update User Account via REST API:
+****************
+The following code performs a PUT request to update the user data via CodeIgniter REST API.
 
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
+// API key
+$apiKey = 'CODEX@123';
 
-***************
-Acknowledgement
-***************
+// API auth credentials
+$apiUser = "admin";
+$apiPass = "1234";
 
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
+// Specify the ID of the user
+$userID = 1; 
+
+// API URL
+$url = 'http://example.com/codeigniter/api/authentication/user/';
+
+// User account info
+$userData = array(
+    'id' => 1,
+    'first_name' => 'John2',
+    'last_name' => 'Doe2',
+    'email' => 'john2@example.com',
+    'password' => 'user_new_pass',
+    'phone' => '545-856-3439'
+);
+
+// Create a new cURL resource
+$ch = curl_init($url);
+
+curl_setopt($ch, CURLOPT_TIMEOUT, 30);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_ANY);
+curl_setopt($ch, CURLOPT_HTTPHEADER, array('X-API-KEY: '.$apiKey, 'Content-Type: application/x-www-form-urlencoded'));
+curl_setopt($ch, CURLOPT_USERPWD, "$apiUser:$apiPass");
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
+curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($userData));
+
+$result = curl_exec($ch);
+
+// Close cURL resource
+curl_close($ch);
