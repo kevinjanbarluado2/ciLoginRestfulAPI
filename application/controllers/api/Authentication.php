@@ -125,6 +125,7 @@ class Authentication extends REST_Controller
         }
     }
 
+
     public function user_put()
     {
         $id = $this->put('id');
@@ -174,5 +175,29 @@ class Authentication extends REST_Controller
         }
     }
 
-    
+    public function user_delete($id)
+    {
+        //check whether post id is not empty
+        if ($id) {
+            //delete post
+            $delete = $this->user->delete($id);
+
+            if ($delete) {
+                //set the response and exit
+                $this->response([
+                    'status' => TRUE,
+                    'message' => 'User has been removed successfully.'
+                ], REST_Controller::HTTP_OK);
+            } else {
+                //set the response and exit
+                $this->response("Some problems occurred, please try again.", REST_Controller::HTTP_BAD_REQUEST);
+            }
+        } else {
+            //set the response and exit
+            $this->response([
+                'status' => FALSE,
+                'message' => 'No user were found.'
+            ], REST_Controller::HTTP_NOT_FOUND);
+        }
+    }
 }
