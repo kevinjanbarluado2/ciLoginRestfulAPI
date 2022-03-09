@@ -10,7 +10,7 @@ class Authentication extends REST_Controller
     public function __construct()
     {
         parent::__construct();
-
+        
         // Load the user model
         $this->load->model('user');
     }
@@ -40,6 +40,10 @@ class Authentication extends REST_Controller
                 $resultArray['last_name'] = $user['last_name'];
                 $resultArray['status'] = $user['status'];
                 // Set the response and exit
+
+                //Add to session
+                $this->session->loggedIn = $resultArray;
+
                 $this->response([
                     'status' => TRUE,
                     'message' => 'User login successful.',

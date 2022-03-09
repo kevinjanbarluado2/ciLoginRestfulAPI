@@ -5,26 +5,32 @@ $(function () {
         let email = $('[type=email]').val();
         let password = $('[type=password]').val();
         if (validator.isEmail(email)) {
+            const api_key = $('[name=API_KEY]').val();
+            const authorization = $('[name=API_AUTH]').val();
 
             var form = new FormData();
             form.append("email", email);
             form.append("password", password);
             var settings = {
-                "url": "http://localhost/investment_new/api/authentication/login/",
+                "url": `${base_url}/api/authentication/login/`,
                 "method": "POST",
                 "timeout": 0,
                 "headers": {
-                    "X-API-KEY": "EliteInsure123",
-                    "Authorization": "Basic YWRtaW46MTIzNA==",
-
+                    "X-API-KEY": api_key,
+                    "Authorization": `Basic ${authorization}`
                 },
                 "processData": false,
                 "mimeType": "multipart/form-data",
                 "contentType": false,
                 "data": form,
                 "dataType": "JSON",
-                "success": function (data) {
-                    $alert.html(data.message).attr('class', 'text-primary');
+                "success": function ({ message, data }) {
+                    $alert.html(message).attr('class', 'text-primary');
+                    let loader = `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    <span class="sr-only">Loading...</span>`;
+                    $('button').html(loader);
+                    return JSON.stringify(data[0])
+
                 },
                 "error": function (err) {
                     let json = JSON.parse(err.responseText)
@@ -32,8 +38,8 @@ $(function () {
                 }
             };
 
-            $.ajax(settings).done(function (response) {
-                console.log('done')
+            $.ajax(settings).done(function ({ data } = {}) {
+                window.location.href = `${base_url}dashboard`;
 
             });
         } else {
