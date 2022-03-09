@@ -34,20 +34,25 @@ class Authentication extends REST_Controller
             $user = $this->user->getRows($con);
 
             if ($user) {
+                $resultArray = array();
+                $resultArray['email'] = $user['email'];
+                $resultArray['first_name'] = $user['first_name'];
+                $resultArray['last_name'] = $user['last_name'];
+                $resultArray['status'] = $user['status'];
                 // Set the response and exit
                 $this->response([
                     'status' => TRUE,
                     'message' => 'User login successful.',
-                    'data' => $user
+                    'data' => array($resultArray)
                 ], REST_Controller::HTTP_OK);
             } else {
                 // Set the response and exit
                 //BAD_REQUEST (400) being the HTTP response code
-                $this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
+                $this->response(array("message" => "Invalid email or password.", "status" => false), REST_Controller::HTTP_BAD_REQUEST);
             }
         } else {
             // Set the response and exit
-            $this->response("Provide email and password.", REST_Controller::HTTP_BAD_REQUEST);
+            $this->response(array("message" => "Provide email and password.", "status" => false), REST_Controller::HTTP_BAD_REQUEST);
         }
     }
 
