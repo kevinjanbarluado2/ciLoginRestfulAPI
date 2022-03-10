@@ -5,6 +5,10 @@
 </div>
 </main>
 <!--   Core JS Files   -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+
 <script src="<?= base_url('assets') ?>/js/core/popper.min.js"></script>
 <script src="<?= base_url('assets') ?>/js/core/bootstrap.min.js"></script>
 <script src="<?= base_url('assets') ?>/js/plugins/perfect-scrollbar.min.js"></script>
@@ -194,7 +198,31 @@
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
 <script src="<?= base_url('assets') ?>/js/soft-ui-dashboard.min.js?v=1.0.3"></script>
+<script src="https://unpkg.com/smartwizard@5/dist/js/jquery.smartWizard.min.js" type="text/javascript"></script>
+<script>
+    $(document).ready(function() {
 
+        $('table').DataTable();
+
+        $('#smartwizard').smartWizard({
+            theme: 'default',
+            transitionEffect: 'fade',
+            justified: true,
+            enableURLhash: false,
+            toolbarSettings: {
+                toolbarPosition: 'bottom', // none, top, bottom, both
+                toolbarButtonPosition: 'right', // left, right, center
+                showNextButton: true, // show/hide a Next button
+                showPreviousButton: true, // show/hide a Previous button
+                toolbarExtraButtons: [] // Extra buttons to show on toolbar, array of jQuery input/buttons elements
+            },
+        });
+
+
+
+
+    });
+</script>
 
 <?php if (is_array($links)) {
     foreach ($links as $x) : ?>
@@ -202,6 +230,10 @@
 
 <?php endforeach;
 } ?>
+
+<script>
+
+</script>
 
 </body>
 

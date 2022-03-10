@@ -24,15 +24,30 @@ class Pages extends CI_Controller
 
     public function planner()
     {
-        $this->load->view('./components/header', array('pageName' => 'Planner', 'link' => __FUNCTION__));
-        $this->load->view('pages/factfind');
+
+        $p1 = $this->load->view('pages/factfind/p1.php', '', true);
+        $p2 = $this->load->view('pages/factfind/p2.php', '', true);
+
+
+
+        $this->load->view('./components/header', array('pageName' => 'Generate Planner', 'link' => __FUNCTION__));
+        $this->load->view('pages/factfind',
+            array('pages' => array('p1' => $p1, 'p2' => $p2))
+        );
         $this->load->view('./components/footer', array("links" => array()));
     }
 
     public function plan()
     {
-        $this->load->view('./components/header', array('pageName' => 'Plan', 'link' => __FUNCTION__));
+        $this->load->view('./components/header', array('pageName' => 'Generate Plan', 'link' => __FUNCTION__));
         $this->load->view('pages/soa');
+        $this->load->view('./components/footer', array("links" => array()));
+    }
+
+    public function users()
+    {
+        $this->load->view('./components/header', array('pageName' => 'Users', 'link' => __FUNCTION__));
+        $this->load->view('pages/users');
         $this->load->view('./components/footer', array("links" => array()));
     }
 }

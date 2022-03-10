@@ -18,7 +18,9 @@
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     <link href="<?= base_url('assets') ?>/css/nucleo-svg.css" rel="stylesheet" />
     <!-- CSS Files -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
     <link id="pagestyle" href="<?= base_url('assets') ?>/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
+    <link href="https://unpkg.com/smartwizard@5/dist/css/smart_wizard_all.min.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -103,7 +105,7 @@
                         <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  " href="<?= base_url() ?>users">
+                        <a class="nav-link <?= ($link == "users") ? 'active' : ''; ?>" href="<?= base_url() ?>users">
                             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                                 <svg width="12px" height="12px" viewBox="0 0 46 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <title>customer-support</title>
@@ -300,7 +302,7 @@
 
                     <div class="col-md-12">
                         <div class="card">
-                            <div class="card-header bg-info card-header-info">
+                            <div class="card-header bg-gradient-info card-header-info">
                                 <h4 class="card-title text-white"><?= $pageName ?></h4>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body p-0">

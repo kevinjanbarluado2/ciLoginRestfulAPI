@@ -61,4 +61,5 @@ $route['logout'] = 'welcome/logout';
 $route['dashboard'] = 'pages/dashboard';
 $route['planner'] = 'pages/planner';
 $route['plan'] = 'pages/plan';
+$route['users'] = 'pages/users';
 
