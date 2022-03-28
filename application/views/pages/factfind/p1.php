@@ -701,11 +701,7 @@
             </div>
             <div class='form-group col-md-3' align='left'>
                 <label>Gender:</label>
-                <!-- <select class='form-control info-fld necessary_fields dependent_information_group' data-required_group="dependent_information" data-tab_id="dependents-p1-tab" id="relationship-gender">
-                    <option value=""></option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                </select> -->
+
                 <input type="text" name="gender" list="gendername" class='form-control info-fld gender-dd-field' data-fld-name='gender' placeholder="You can select or type">
                 <datalist id="gendername">
                     <option value="Male">

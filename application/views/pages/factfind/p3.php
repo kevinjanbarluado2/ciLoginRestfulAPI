@@ -1,5 +1,5 @@
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <!-- <li class="nav-item">
         <a class="nav-link active" data-toggle="pill" href="#planb-client" role="tab" aria-controls="planb-client" aria-selected="true">
             Client's Plan B
         </a>
@@ -8,16 +8,16 @@
         <a class="nav-link" data-toggle="pill" href="#planb-partner" role="tab" aria-controls="planb-partner" aria-selected="true">
             Partner's Plan B
         </a>
-    </li>
+    </li> -->
     <li class="nav-item">
-        <a class="nav-link" data-toggle="pill" href="#existing-insurance-list" role="tab" aria-controls="existing-insurance-list" aria-selected="true">
+        <a class="nav-link active" data-toggle="pill" href="#existing-insurance-list" role="tab" aria-controls="existing-insurance-list" aria-selected="true">
             Existing Investment
         </a>
     </li>
 
 </ul>
 <div class="tab-content">
-    <div class="tab-pane fade show active" role="tabpanel" id="planb-client" aria-labelledby="planb-client">
+    <!-- <div class="tab-pane fade show active" role="tabpanel" id="planb-client" aria-labelledby="planb-client">
         <br />
         <div class="row">
             <div class="col">
@@ -60,5 +60,5 @@
                 </ul>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>

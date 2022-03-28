@@ -35,7 +35,7 @@ $(document).ready(function () {
         <div class="adviser">
         <div class="d-flex">
         <h4 align="left" class="adviserCount">Adviser # ${count}</h4>
-        <button class="removeAdviser btn btn-danger btn-sm ml-auto px-3"><i class="fa fa-trash fa-lg"></i></button>
+        <button class="removeAdviser btn btn-danger ml-auto px-3"><i class="fa fa-trash"></i></button>
         </div>
 
         <div class="row">

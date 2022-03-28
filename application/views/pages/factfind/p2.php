@@ -259,26 +259,53 @@
 
     <div class="tab-pane fade" id="goals-p2" role="tabpanel" aria-labelledby="goals-p2">
         <br />
-
-
         <div class='row'>
             <div class='col-md-12 col-sm-12' align='left'>
-                <h4>Goals</h4>
-                <table class="table table-striped" id="objectives">
-                    <thead>
+                <div class="d-flex">
+                    <h4>Goals</h4>
+                    <button class="btn btn-primary ml-auto px-3" id="addGoal">Add Goals&nbsp;&nbsp;<i class="fa fa-plus"></i></button>
+                </div>
+                <table class="table table-striped" id="goalsTable">
+                    <thead id="insertGoal">
                         <tr>
                             <th>Purpose</th>
                             <th>Priority</th>
-                            <th>Expected cost</th>
-                            <th>How to fund</th>
                             <th>Goal term</th>
-                            <th>Specific time</th>
+                            <th colspan="2">Specific time</th>
                         </tr>
-
                     </thead>
+                    <tbody>
+
+                    </tbody>
                 </table>
+
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-md-12" align="left">
+                <h4 style="margin-bottom: 0 !important;">Title - Your mindset towards investing
+                    <button data-html="true" type="button" class="guidanceNote border btn btn-secondary mb-0" data-container="body" title="" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Sample Guidance Note" data-original-title="Guidance Notes">?</button>
+                </h4>
+                <div class="form-group">
+                    <label>What is your level of comforting with risk and taking risk?</label>
+                    <textarea type="text" class="form-control info-fld" placeholder=""></textarea>
+                </div>
+                <div class="form-group">
+                    <label>What is the most important to yo regarding returns?</label>
+                    <textarea type="text" class="form-control info-fld" placeholder=""></textarea>
+                </div>
+                <div class="form-group">
+                    <label>How do you see the security of your job, buesiness, or finances in the foreseable future?</label>
+                    <textarea type="text" class="form-control info-fld" placeholder=""></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Are there any influneces in your life that I should be aware of which may impact my advice to you?</label>
+                    <textarea type="text" class="form-control info-fld" placeholder=""></textarea>
+                </div>
+            </div>
+        </div>
+
     </div>
 
 </div>
