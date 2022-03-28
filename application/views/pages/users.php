@@ -12,7 +12,7 @@
 <div class="card">
 
     <div class="table-responsive">
-        <table class="table align-items-center mb-0">
+        <table id="userTable" class="table align-items-center mb-0">
             <thead>
                 <tr>
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Author</th>

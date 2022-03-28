@@ -4856,12 +4856,14 @@ fieldset:disabled .btn {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+      font-size: .8rem;
 }
 
 .nav-link {
   display: block;
   padding: 0.5rem 1rem;
-  color: #cb0c9f;
+  /* color: #cb0c9f; */
+  color: #495057;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
 
@@ -4873,7 +4875,8 @@ fieldset:disabled .btn {
 
 .nav-link:hover,
 .nav-link:focus {
-  color: #830866;
+  /* color: #830866; */
+  color: #495057;
 }
 
 .nav-link.disabled {
@@ -19904,7 +19907,7 @@ fieldset:disabled .btn {
   right: 0;
 }
 
-.input-group {
+/* .input-group {
   border-radius: 0.5rem;
 }
 
@@ -19939,7 +19942,7 @@ fieldset:disabled .btn {
 
 .input-group .input-group-text {
   border-right: 0;
-}
+} */
 
 .form-group {
   margin-bottom: 1rem;
@@ -20871,7 +20874,7 @@ hr.horizontal.gray-light {
 .navbar-vertical .navbar-nav .nav-link {
   display: flex;
   align-items: center;
-  white-space: nowrap;
+  /* white-space: nowrap; */
 }
 
 .navbar-vertical .navbar-heading {
