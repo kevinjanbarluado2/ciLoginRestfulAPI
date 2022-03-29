@@ -37,7 +37,7 @@ class Pages extends CI_Controller
             'pages/factfind',
             array('pages' => array('p1' => $p1, 'p2' => $p2, 'p3' => $p3, 'p4' => $p4))
         );
-        $this->load->view('./components/footer', array("links" => array('ff/p1', 'ff/p2')));
+        $this->load->view('./components/footer', array("links" => array('ff/p1', 'ff/p2', 'ff/p3', 'ff/p4')));
     }
 
     public function plan()

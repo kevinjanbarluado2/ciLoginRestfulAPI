@@ -11,67 +11,22 @@ $config['charset'] = 'UTF-8';
 $config['enable_hooks'] = FALSE;
 $config['subclass_prefix'] = 'MY_';
 
-/*
-|--------------------------------------------------------------------------
-| Composer auto-loading
-|--------------------------------------------------------------------------
-|
-| Enabling this setting will tell CodeIgniter to look for a Composer
-| package auto-loader script in application/vendor/autoload.php.
-|
-|	$config['composer_autoload'] = TRUE;
-|
-| Or if you have your vendor/ directory located somewhere else, you
-| can opt to set a specific path as well:
-|
-|	$config['composer_autoload'] = '/path/to/vendor/autoload.php';
-|
-| For more information about Composer, please visit http://getcomposer.org/
-|
-| Note: This will NOT disable or override the CodeIgniter-specific
-|	autoloading (application/config/autoload.php)
-*/
+
 $config['composer_autoload'] = FALSE;
-
-
 $config['permitted_uri_chars'] = 'a-z 0-9~%.:_\-';
-
 $config['enable_query_strings'] = FALSE;
 $config['controller_trigger'] = 'c';
 $config['function_trigger'] = 'm';
 $config['directory_trigger'] = 'd';
-
-
 $config['allow_get_array'] = TRUE;
-
-
 $config['log_threshold'] = 0;
 
-/*
-|--------------------------------------------------------------------------
-| Error Logging Directory Path
-|--------------------------------------------------------------------------
-|
-| Leave this BLANK unless you would like to set something other than the default
-| application/logs/ directory. Use a full server path with trailing slash.
-|
-*/
 $config['log_path'] = '';
-
 
 $config['log_file_extension'] = '';
 
 $config['log_file_permissions'] = 0644;
 
-/*
-|--------------------------------------------------------------------------
-| Date Format for Logs
-|--------------------------------------------------------------------------
-|
-| Each item that is logged has an associated date. You can use PHP date
-| codes to set your own date formatting
-|
-*/
 $config['log_date_format'] = 'Y-m-d H:i:s';
 
 /*
