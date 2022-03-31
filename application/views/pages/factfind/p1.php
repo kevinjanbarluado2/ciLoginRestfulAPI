@@ -42,8 +42,8 @@
                 <input type="text" class="form-control info-fld necessary_fields client_information_group" data-required_group="client_information" data-tab_id="client-p1-tab" id="client-first-name" data-fld-name="firstname" placeholder="Enter first name">
             </div>
             <div class="form-group col-md-4" align="left">
-                <label>Second Name</label>
-                <input type="text" class="form-control info-fld" data-fld-name="secondname" placeholder="Enter second name">
+                <label>Middle Name</label>
+                <input type="text" class="form-control info-fld" data-fld-name="secondname" placeholder="Enter Middle Name">
             </div>
             <div class="form-group col-md-4" align="left">
                 <label>Surname</label>
@@ -150,11 +150,15 @@
         <div class="row">
 
             <div class="form-group col-md-6" align="left">
-                <label>Employer</label>
+                <label>Company Name</label>
                 <input type="text" class="form-control info-fld" data-fld-name="employername" placeholder="Enter employer">
             </div>
+            <div class="form-group col-md-6" align='left'>
+                <label>Employment Status</label>
+                <input type="text" class="form-control info-fld" data-fld-name='employmentstatus' placeholder="Enter Employment Status" />
+            </div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
             <div class="form-group col-md-12" align="center">
                 <label>Employment Status:</label><br>
                 <div class="btn-group" data-toggle="buttons">
@@ -175,7 +179,7 @@
                     </label>
                 </div>
             </div>
-        </div>
+        </div> -->
 
 
 
@@ -207,117 +211,69 @@
                 <input type="number" class="form-control info-fld" data-fld-name="manualduties" placeholder="Manual Duties (%)">
             </div>
         </div> -->
-
-        <h4>Previous Employment</h4>
         <div class="row">
-
-            <div class="form-group col-md-6" align="left">
-                <label>Occupation</label>
-                <input type="text" class="form-control info-fld" data-fld-name="prevocc" placeholder="Enter occupation">
-            </div>
-            <!-- <div class="form-group col-md-6" align="left">
-                <label>Job Title</label>
-                <input type="text" class="form-control info-fld" data-fld-name="prevjob" placeholder="Enter job title">
-            </div> -->
-            <div class="form-group col-md-6" align="left">
-                <label>Gross Salary</label>
-                <div class="input-group">
-                    <span class="input-group-addon">$</span>
-                    <input type="number" class="form-control info-fld disable-char" data-fld-name="prevsalary" placeholder="Enter gross salary">
-                </div>
-            </div>
-        </div>
-        <div class="row">
-
-            <div class="form-group col-md-6" align="left">
-                <label>Employer</label>
-                <input type="text" class="form-control info-fld" data-fld-name="prevemployer" placeholder="Enter Employer">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12" style="padding:20px" align="center">
-                <label>Previous Employment Status:</label><br>
-                <div class="btn-group" data-toggle="buttons" align="center">
-                    <label class="btn btn-info" data-fld-name="prevempstatus">
-                        <input type="radio" autocomplete="off" value="ft" checked=""> Full Time
-                    </label>
-                    <label class="btn btn-info" data-fld-name="prevempstatus">
-                        <input type="radio" autocomplete="off" value="pt"> Part Time
-                    </label>
-                    <label class="btn btn-info" data-fld-name="prevempstatus">
-                        <input type="radio" autocomplete="off" value="cs"> Casual
-                    </label>
-                    <label class="btn btn-info" data-fld-name="prevempstatus">
-                        <input type="radio" autocomplete="off" value="un"> Unemployed
-                    </label>
-                    <label class="btn btn-info" data-fld-name="prevempstatus">
-                        <input type="radio" autocomplete="off" value="se"> Self-Employed
+            <div class="col-md-6">
+                <label>Show Previous Employment</label>
+                <div>
+                    <label class="switch">
+                        <input type="checkbox" checked onclick="showHide('previousClient')">
+                        <span class="slider round"></span>
                     </label>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="form-group col-md-6" align="left">
-                <label>Length (in years)</label>
-                <input type="number" class="form-control info-fld" data-fld-name="prevlength" placeholder="Length in years">
+        <div id="previousClient">
+            <h4>Previous Employment</h4>
+            <div class="row">
+
+                <div class="form-group col-md-6" align="left">
+                    <label>Occupation</label>
+                    <input type="text" class="form-control info-fld" data-fld-name="prevocc" placeholder="Enter occupation">
+                </div>
+
+                <div class="form-group col-md-6" align="left">
+                    <label>Gross Salary</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">$</span>
+                        <input type="number" class="form-control info-fld disable-char" data-fld-name="prevsalary" placeholder="Enter gross salary">
+                    </div>
+                </div>
             </div>
-            <div class="form-group col-md-6" align="left">
-                <label>Paid leave owing</label>
-                <input type="number" class="form-control info-fld" data-fld-name="prevleave" placeholder="Paid leave owing">
+            <div class="row">
+
+                <div class="form-group col-md-6" align="left">
+                    <label>Company Name</label>
+                    <input type="text" class="form-control info-fld" data-fld-name="prevemployer" placeholder="Enter Company Name">
+                </div>
+                <div class="form-group col-md-6" align='left'>
+                    <label>Employment Status</label>
+                    <input type="text" class="form-control info-fld" data-fld-name='prevemploymentstatus' placeholder="Enter Employment Status" />
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="form-group col-md-6" align="left">
-                <label>Start Date</label>
-                <input type="text" class="form-control info-fld date-picker" data-fld-name="prevstart" placeholder="Start date...">
+
+            <div class="row">
+                <div class="form-group col-md-6" align="left">
+                    <label>Length (in years)</label>
+                    <input type="number" class="form-control info-fld" data-fld-name="prevlength" placeholder="Length in years">
+                </div>
+                <div class="form-group col-md-6" align="left">
+                    <label>Paid leave owing</label>
+                    <input type="number" class="form-control info-fld" data-fld-name="prevleave" placeholder="Paid leave owing">
+                </div>
             </div>
-            <div class="form-group col-md-6" align="left">
-                <label>End Date</label>
-                <input type="text" class="form-control info-fld date-picker" data-fld-name="prevend" placeholder="End date...">
+            <div class="row">
+                <div class="form-group col-md-6" align="left">
+                    <label>Start Date</label>
+                    <input type="text" class="form-control info-fld date-picker" data-fld-name="prevstart" placeholder="Start date...">
+                </div>
+                <div class="form-group col-md-6" align="left">
+                    <label>End Date</label>
+                    <input type="text" class="form-control info-fld date-picker" data-fld-name="prevend" placeholder="End date...">
+                </div>
             </div>
         </div>
 
         <h4>Residency</h4>
-
-        <h6></h6>
-        <div class="row" style="padding:20px" align="center">
-            <label>NZ Residency Status - NZ Citizen or 2 years work visa total with 1 year remaining or more</label><br>
-            <div class="btn-group" data-toggle="buttons" align="center">
-                <label class="btn btn-info" data-fld-name="taxresident">
-                    <input type="radio" autocomplete="off" value="Yes" checked=""> Yes
-                </label>
-                <label class="btn btn-info" data-fld-name="taxresident">
-                    <input type="radio" autocomplete="off" value="No"> No
-                </label>
-            </div>
-        </div>
-
-        <div class="row">
-
-            <div class="form-group col-md-6" align="left">
-                <label>Describe work or study visa detail</label>
-                <input type="text" class="form-control info-fld" data-fld-name="nonresicountry" placeholder="">
-            </div>
-            <div class="form-group col-md-6" align="left">
-                <label>Business IRD/ACC Number</label>
-                <input type="text" class="form-control info-fld" data-fld-name="irdnum" placeholder="Enter Business IRD/ACC Number">
-            </div>
-        </div>
-
-
-        <div class="row">
-            <div class="form-group col-md-12" align="center">
-                <label>Are you a smoker?</label><br>
-                <div class="btn-group" data-toggle="buttons" align="center">
-                    <label class="btn btn-info" data-fld-name="smoker">
-                        <input type="radio" autocomplete="off" value="yes"> Yes
-                    </label>
-                    <label class="btn btn-info" data-fld-name="smoker">
-                        <input type="radio" autocomplete="off" value="no"> No
-                    </label>
-                </div>
-            </div>
-        </div>
 
         <div class="row">
             <div class="form-group col-md-12" align="center">
@@ -364,8 +320,8 @@
                 <input type="text" id='partner-first-name' class="form-control info-fld necessary_fields partner_information_group" data-required_group="partner_information" data-tab_id="partner-p1-tab" data-fld-name='firstname' placeholder="Enter first name" />
             </div>
             <div class="form-group col-md-4" align='left'>
-                <label>Second Name</label>
-                <input type="text" class="form-control info-fld" data-fld-name='secondname' placeholder="Enter second name" />
+                <label>Middle Name</label>
+                <input type="text" class="form-control info-fld" data-fld-name='secondname' placeholder="Enter Middle Name" />
             </div>
             <div class="form-group col-md-4" align='left'>
                 <label>Surname</label>
@@ -475,11 +431,15 @@
         <div class='row'>
 
             <div class="form-group col-md-6" align='left'>
-                <label>Employer</label>
-                <input type="text" class="form-control info-fld" data-fld-name='employername' placeholder="Enter Employer" />
+                <label>Company Name</label>
+                <input type="text" class="form-control info-fld" data-fld-name='employername' placeholder="Enter Company Name" />
+            </div>
+            <div class="form-group col-md-6" align='left'>
+                <label>Employment Status</label>
+                <input type="text" class="form-control info-fld" data-fld-name='employmentstatus' placeholder="Enter Employment Status" />
             </div>
         </div>
-        <div class='row' style="padding:20px" align='center'>
+        <!-- <div class='row' style="padding:20px" align='center'>
             <label>Employment Status:</label><br />
             <div class="btn-group" data-toggle="buttons" align='center'>
                 <label class="btn btn-info" data-fld-name='empstatus'>
@@ -498,7 +458,7 @@
                     <input type="radio" autocomplete="off" value="se"> Self-Employed
                 </label>
             </div>
-        </div>
+        </div> -->
         <div class='row'>
             <div class="form-group col-md-4" align='left'>
                 <label>Length (in years)</label>
@@ -527,113 +487,71 @@
                 <input type="number" class="form-control info-fld" data-fld-name='manualduties' placeholder="Manual Duties (%)" />
             </div>
         </div>
-
-        <h4>Previous Employment</h4>
-        <div class='row'>
-            <div class="form-group col-md-6" align='left'>
-                <label>Occupation</label>
-                <input type="text" class="form-control info-fld" data-fld-name='prevocc' placeholder="Enter occupation" />
-            </div>
-            <!-- <div class="form-group col-md-6" align='left'>
-                <label>Job Title</label>
-                <input type="text" class="form-control info-fld" data-fld-name='prevjob' placeholder="Enter job title" />
-            </div> -->
-            <div class="form-group col-md-6" align='left'>
-                <label>Gross Salary</label>
-                <div class="input-group">
-                    <span class="input-group-addon">$</span>
-                    <input type="number" class="form-control info-fld disable-char" data-fld-name='prevsalary' placeholder="Enter gross salary" />
+        <div class="row">
+            <div class="col-md-6">
+                <label>Show Previous Employment</label>
+                <div>
+                    <label class="switch">
+                        <input type="checkbox" checked onclick="showHide('previousPartner')">
+                        <span class="slider round"></span>
+                    </label>
                 </div>
             </div>
         </div>
-        <div class='row'>
 
-            <div class="form-group col-md-6" align='left'>
-                <label>Employer</label>
-                <input type="text" class="form-control info-fld" data-fld-name='prevemployer' placeholder="Enter Employer" />
-            </div>
-        </div>
-        <div class='row' style="padding:20px" align='center'>
-            <label>Previous Employment Status:</label><br />
-            <div class="btn-group" data-toggle="buttons" align='center'>
-                <label class="btn btn-info" data-fld-name='prevempstatus'>
-                    <input type="radio" autocomplete="off" value="ft" checked> Full Time
-                </label>
-                <label class="btn btn-info" data-fld-name='prevempstatus'>
-                    <input type="radio" autocomplete="off" value="pt"> Part Time
-                </label>
-                <label class="btn btn-info" data-fld-name='prevempstatus'>
-                    <input type="radio" autocomplete="off" value="cs"> Casual
-                </label>
-                <label class="btn btn-info" data-fld-name='prevempstatus'>
-                    <input type="radio" autocomplete="off" value="un"> Unemployed
-                </label>
-                <label class="btn btn-info" data-fld-name='prevempstatus'>
-                    <input type="radio" autocomplete="off" value="se"> Self-Employed
-                </label>
-            </div>
-        </div>
-        <div class='row'>
-            <div class="form-group col-md-6" align='left'>
-                <label>Length (in years)</label>
-                <input type="number" class="form-control info-fld" data-fld-name='prevlength' placeholder="Length in years" />
-            </div>
-            <div class="form-group col-md-6" align='left'>
-                <label>Paid leave owing</label>
-                <input type="number" class="form-control info-fld" data-fld-name='prevleave' placeholder="Paid leave owing" />
-            </div>
-        </div>
-        <div class='row'>
-            <div class="form-group col-md-6" align='left'>
-                <label>Start Date</label>
-                <input type="text" class="form-control info-fld date-picker" data-fld-name='prevstart' placeholder="Start date..." />
-            </div>
-            <div class="form-group col-md-6" align='left'>
-                <label>End Date</label>
-                <input type="text" class="form-control info-fld date-picker" data-fld-name='prevend' placeholder="End date..." />
-            </div>
-        </div>
 
+        <div id="previousPartner">
+            <h4>Previous Employment</h4>
+            <div class='row'>
+                <div class="form-group col-md-6" align='left'>
+                    <label>Occupation</label>
+                    <input type="text" class="form-control info-fld" data-fld-name='prevocc' placeholder="Enter occupation" />
+                </div>
+
+                <div class="form-group col-md-6" align='left'>
+                    <label>Gross Salary</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">$</span>
+                        <input type="number" class="form-control info-fld disable-char" data-fld-name='prevsalary' placeholder="Enter gross salary" />
+                    </div>
+                </div>
+            </div>
+            <div class='row'>
+
+                <div class="form-group col-md-6" align='left'>
+                    <label>Company Name</label>
+                    <input type="text" class="form-control info-fld" data-fld-name='prevemployer' placeholder="Enter Company Name" />
+                </div>
+                <div class="form-group col-md-6" align='left'>
+                    <label>Employment Status</label>
+                    <input type="text" class="form-control info-fld" data-fld-name='prevemploymentstatus' placeholder="Enter Employment Status" />
+                </div>
+            </div>
+            <div class='row'>
+                <div class="form-group col-md-6" align='left'>
+                    <label>Length (in years)</label>
+                    <input type="number" class="form-control info-fld" data-fld-name='prevlength' placeholder="Length in years" />
+                </div>
+                <div class="form-group col-md-6" align='left'>
+                    <label>Paid leave owing</label>
+                    <input type="number" class="form-control info-fld" data-fld-name='prevleave' placeholder="Paid leave owing" />
+                </div>
+            </div>
+            <div class='row'>
+                <div class="form-group col-md-6" align='left'>
+                    <label>Start Date</label>
+                    <input type="text" class="form-control info-fld date-picker" data-fld-name='prevstart' placeholder="Start date..." />
+                </div>
+                <div class="form-group col-md-6" align='left'>
+                    <label>End Date</label>
+                    <input type="text" class="form-control info-fld date-picker" data-fld-name='prevend' placeholder="End date..." />
+                </div>
+            </div>
+        </div>
         <h4>Residency</h4>
 
-        <h6></h6>
-        <div class='row' style="padding:20px" align='center'>
-            <label>NZ Residency Status - NZ Citizen or 2 years work visa total with 1 year remaining or more</label><br />
-            <div class="btn-group" data-toggle="buttons" align='center'>
-                <label class="btn btn-info" data-fld-name='taxresident'>
-                    <input type="radio" autocomplete="off" value="Yes" checked> Yes
-                </label>
-                <label class="btn btn-info" data-fld-name='taxresident'>
-                    <input type="radio" autocomplete="off" value="No"> No
-                </label>
-            </div>
-        </div>
 
-        <div class='row'>
 
-            <div class="form-group col-md-6" align='left'>
-                <label>Describe work or study visa detail</label>
-                <input type="text" class="form-control info-fld" data-fld-name='nonresicountry' placeholder="" />
-            </div>
-            <div class="form-group col-md-6" align='left'>
-                <label>Business IRD/ACC Number</label>
-                <input type="text" class="form-control info-fld" data-fld-name='irdnum' placeholder="Enter Business IRD/ACC Number" />
-            </div>
-        </div>
-
-        <div class="row">
-            <div class='form-group col-md-12' align="center">
-                <label>Are you a smoker?</label><br />
-                <div class="btn-group" data-toggle="buttons" align='center'>
-                    <label class="btn btn-info" data-fld-name='smoker'>
-                        <input type="radio" autocomplete="off" value="yes"> Yes
-                    </label>
-                    <label class="btn btn-info" data-fld-name='smoker'>
-                        <input type="radio" autocomplete="off" value="no"> No
-                    </label>
-                </div>
-            </div>
-        </div>
 
         <div class="row">
             <div class='form-group col-md-12' align="center">
@@ -848,7 +766,7 @@
 
 
         </div>
-       
+
     </div>
     <div class="tab-pane fade" id="pills-notes" role="tabpanel" aria-labelledby="pills-notes-tab">
         <div class="row">

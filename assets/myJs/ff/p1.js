@@ -1,4 +1,10 @@
+function showHide(e) {
+    $(`#${e}`).fadeToggle();
+    
+}
 $(document).ready(function () {
+
+
     //Define Constants
     const partnerTab = $('#pills-partner-tab');
     const solicitor = $('#showSolicitor');

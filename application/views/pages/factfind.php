@@ -15,14 +15,17 @@
                 <strong>Step 3</strong> <br>Current Risk Portfolio
             </a>
         </li>
-
         <li class="nav-item">
             <a class="nav-link" href="#step-4">
-                <strong>Step 4</strong> <br>Scope of Service</a>
+                <strong>Step 4</strong> <br>Verification</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#step-5">
-                <strong>Step 5</strong> <br>Generate Fact Find</a>
+                <strong>Step 5</strong> <br>Scope of Service</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#step-6">
+                <strong>Step 6</strong> <br>Generate Fact Find</a>
         </li>
     </ul>
 
@@ -39,7 +42,6 @@
         </div>
 
         <div id="step-4" class="tab-pane" role="tabpanel" aria-labelledby="step-4" style="position: static; left: auto; width: auto; display: none;">
-            <h3>Step 4 Content</h3>
             <?= $pages['p4'] ?? '' ?>
 
         </div>

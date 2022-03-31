@@ -7,7 +7,14 @@
     </li>
 
 </ul>
+
 <div class="tab-content">
+    <br>
+    <div class="row">
+        <div class="col">
+            <textarea style="width: 900px;margin:auto;" class="form-control" name="" id="" cols="30" rows="10"></textarea>
+        </div>
+    </div>
     <div class="tab-pane fade show active" role="tabpanel" id="existing-investment-list" aria-labelledby="existing-investment-list">
         <div id="eps_upload">
             <input id='upload-eps' style='display:none' type='file' multiple />
