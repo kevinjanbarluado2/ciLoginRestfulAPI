@@ -12,15 +12,24 @@ $(document).ready(function () {
             $(this).addClass('active');
             $(this).parents('table').find('tbody>tr>th input').prop('disabled', true).prop('checked', false);
             $(this).parents('table').find(`tbody>tr>th:eq(${target}) input`).prop('disabled', false);
-            console.log(this)
+
         })
 
         $('.removeMe').on('click', function () {
             $(this).parents('.myCard').remove();
             $('.myCard').each(function (ind, elm) {
-                $(this).find('.myButton').html(` Plan # ${ind+1}`);
+                let getName = $(this).find("[data-fld-name=firstName]").val().trim();
+                let str = (getName !== "") ? getName : ` Plan # ${ind + 1}`;
+                $(this).find('.myButton').html(str);
             })
         })
+
+        $('.myCard').on('keyup', "[data-fld-name=firstName]", function (e) {
+
+            let name = $(this).val();
+            console.log(name);
+            $(this).parents('.myCard').find('.myButton').html(name);
+        });
 
     }
 
@@ -39,7 +48,7 @@ $(document).ready(function () {
 
 
     $('#showIndividual').on('click', '#addPlan', function (e) {
-        e.preventDefault();
+
 
         let index = $('.myCard').length + 1 ?? 1;
 

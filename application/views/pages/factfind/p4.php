@@ -23,7 +23,7 @@
         </div>
 
         <div id="showIndividual" style="display: none;">
-            <button class="btn btn-info btn-sm" id="addPlan">Add Plan</button>
+            <button class="btn btn-info btn-sm" id="addPlan">Add Individual</button>
             <div class="accordion" id="accordion">
 
 

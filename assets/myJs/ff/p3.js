@@ -188,13 +188,8 @@ $(function () {
     });
 
 
-    $('#eps_upload').on('click', '.upl-list-item', function () {
-        var tgt = $(this).attr('data-tgt');
 
-        if (tgt != "" || tgt != null) {
-            var html = "<iframe width='100%' height='500' src='" + tgt + "'></iframe>";
-            $('#preview-dialog').find(".modal-body").html(html);
-            $('#preview-dialog').modal('show');
-        }
-    });
+    $('.editor').Editor({ "font_size": false, "fonts": false, "formatting": false });
+
+
 })
