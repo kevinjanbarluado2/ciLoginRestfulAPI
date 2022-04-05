@@ -19,7 +19,7 @@ $(document).ready(function () {
             $(this).parents('.myCard').remove();
             $('.myCard').each(function (ind, elm) {
                 let getName = $(this).find("[data-fld-name=firstName]").val().trim();
-                let str = (getName !== "") ? getName : ` Plan # ${ind + 1}`;
+                let str = (getName !== "") ? getName : ` Unnamed # ${ind + 1}`;
                 $(this).find('.myButton').html(str);
             })
         })

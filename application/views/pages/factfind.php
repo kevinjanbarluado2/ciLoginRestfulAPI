@@ -24,7 +24,7 @@
                 <strong>Step 5</strong> <br>Scope of Service</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#step-6">
+            <a class="nav-link" href="#ff">
                 <strong>Step 6</strong> <br>Generate Fact Find</a>
         </li>
     </ul>
@@ -45,10 +45,8 @@
             <?= $pages['p4'] ?? '' ?>
 
         </div>
-        <div id="step-5" class="tab-pane" role="tabpanel" aria-labelledby="step-5" style="display: none;">
-            <h3>Step 5 Content</h3>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        <div id="ff" class="tab-pane" role="tabpanel" aria-labelledby="step-5" style="display: none;">
+            <?= $pages['ff'] ?? '' ?>
         </div>
 
     </div>

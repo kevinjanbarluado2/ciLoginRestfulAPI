@@ -29,15 +29,15 @@ class Pages extends CI_Controller
         $p2 = $this->load->view('pages/factfind/p2.php', '', true);
         $p3 = $this->load->view('pages/factfind/p3.php', '', true);
         $p4 = $this->load->view('pages/factfind/p4.php', '', true);
-
+        $ff = $this->load->view('pages/factfind/ff.php', '', true);
 
 
         $this->load->view('./components/header', array('pageName' => 'Fact Find', 'link' => __FUNCTION__));
         $this->load->view(
             'pages/factfind',
-            array('pages' => array('p1' => $p1, 'p2' => $p2, 'p3' => $p3, 'p4' => $p4))
+            array('pages' => array('p1' => $p1, 'p2' => $p2, 'p3' => $p3, 'p4' => $p4, 'ff' => $ff))
         );
-        $this->load->view('./components/footer', array("links" => array('ff/p1', 'ff/p2', 'ff/p3', 'ff/p4')));
+        $this->load->view('./components/footer', array("links" => array('ff/p1', 'ff/p2', 'ff/p3', 'ff/p4', 'ff/ff')));
     }
 
     public function plan()
