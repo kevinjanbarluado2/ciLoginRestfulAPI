@@ -125,7 +125,7 @@
             </div>
             <div class="form-group col-md-6" align="left">
                 <label>Postcode</label>
-                <input type="number" class="form-control info-fld" data-fld-name="postcode" placeholder="Enter postcode">
+                <input type="text" class="form-control info-fld" data-fld-name="postcode" placeholder="Enter postcode">
             </div>
         </div>
 
@@ -275,6 +275,7 @@
 
         <h4>Residency</h4>
 
+
         <div class="row">
             <div class="form-group col-md-12" align="center">
                 <label>Residence Status</label><br>
@@ -292,7 +293,20 @@
             </div>
         </div>
 
-
+        <div class="row">
+            <div class="col-md-6">
+                <label>IRD</label>
+                <input type="text" class="form-control info-fld" data-fld-name="ird" placeholder="Enter IRD...">
+            </div>
+            <div class="col-md-6">
+                <label>PEP (politically exposed person EDD)?</label>
+                <select name="pep" class="form-control">
+                    <option value="">--Please Select--</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+        </div>
 
     </div>
     <div class="tab-pane fade" id="pills-partner" role="tabpanel" aria-labelledby="pills-partner-tab">
@@ -406,7 +420,7 @@
             </div>
             <div class="form-group col-md-6" align='left'>
                 <label>Postcode</label>
-                <input type="number" class="form-control info-fld" data-fld-name='postcode' placeholder="Enter postcode" />
+                <input type="text" class="form-control info-fld" data-fld-name='postcode' placeholder="Enter postcode" />
             </div>
         </div>
 
@@ -551,8 +565,6 @@
         <h4>Residency</h4>
 
 
-
-
         <div class="row">
             <div class='form-group col-md-12' align="center">
                 <label>Residence Status</label><br />
@@ -570,7 +582,20 @@
             </div>
 
         </div>
-
+        <div class="row">
+            <div class="col-md-6">
+                <label>IRD</label>
+                <input type="text" class="form-control info-fld" data-fld-name="ird" placeholder="Enter IRD...">
+            </div>
+            <div class="col-md-6">
+                <label>PEP (politically exposed person EDD)?</label>
+                <select name="pep" class="form-control">
+                    <option value="">--Please Select--</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+        </div>
 
     </div>
     <div class="tab-pane fade" id="pills-dependant" role="tabpanel" aria-labelledby="pills-dependant-tab">
@@ -594,7 +619,7 @@
         <div class='row'>
             <div class='form-group col-md-8' align='left'>
                 <label>Dependant Name *:</label>
-                <input id="dependant_name" type='text' class="form-control info-fld necessary_fields dependent_information_group" data-required_group="dependent_information" data-tab_id="dependents-p1-tab" placeholder="Enter Dependantname" />
+                <input id="dependant_name" type='text' class="form-control info-fld necessary_fields dependent_information_group" data-required_group="dependent_information" data-tab_id="dependents-p1-tab" placeholder="Enter Dependant name" />
             </div>
             <div class='form-group col-md-4' align='left'>
                 <label>Dependant's Date of Birth *:</label>
@@ -604,17 +629,12 @@
         <div class='row'>
             <div class='form-group col-md-3' align='left'>
                 <label>Relationship</label>
-                <!-- <select class='form-control info-fld necessary_fields dependent_information_group' data-required_group="dependent_information" data-tab_id="dependents-p1-tab" id="relationship-select">
-                    <option value=""></option>
-                    <option value="Son">Son</option>
-                    <option value="Daughter">Daughter</option> -->
-
                 <input type="text" name="gender" list="relationshiplist" class='form-control info-fld necessary_fields dependent_information_group' data-fld-name='relationship' placeholder="You can select or type">
                 <datalist id="relationshiplist">
                     <option value="Son">Son</option>
                     <option value="Daughter">Daughter</option>
                 </datalist>
-                <!-- <option>Other</option> -->
+
                 </select>
             </div>
             <div class='form-group col-md-3' align='left'>

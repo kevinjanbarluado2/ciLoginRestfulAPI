@@ -271,7 +271,9 @@
                             <th>Purpose</th>
                             <th>Priority</th>
                             <th>Goal term</th>
-                            <th colspan="2">Specific time</th>
+                            <th>Specific time</th>
+                            <th>Expected Cost</th>
+                            <th>How to Fund</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -306,6 +308,81 @@
             </div>
         </div>
 
+    </div>
+    <div class="tab-pane fade" id="estate-p2" role="tabpanel" aria-labelledby="estate-p2">
+        <div class="row">
+            <div class='col-md-12 col-sm-12' align='left'>
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <th>Estate Plans</th>
+                            <th>Client</th>
+                            <th>Partner</th>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>WILL</td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><input type="text" class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td>POA</td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><input type="text" class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td>EPOA</td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><input type="text" class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td>DOCUMENT LOCATION</td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><input type="text" class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td>DATE REVIEWED</td>
+                            <td><input type="date" class="form-control data-picker"></td>
+                            <td><input type="date" class="form-control data-picker"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="table table-bordered">
+                    <tr>
+                        <th>Notes</th>
+                    </tr>
+                    <tr>
+                        <td><textarea class="form-control" id="" cols="10" rows="5"></textarea></td>
+                    </tr>
+                </table>
+                <div class="row">
+                    <div class="form-group col-md-4" align="left">
+                        <label><strong>Do you have a Trust?</strong></label><br>
+                        <button class="btn btn-info btn-sm" id="addTrustee">Add Trustee</button>
+                    </div>
+                </div>
+                <div id="showTrustee">
+
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>Notes:</label>
+                        <textarea id="notesTrustee" class="form-control" cols="10" rows="5" placeholder="Enter Notes..."></textarea>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="tap-pane fade" id="notes-p2" role="tabpanel" aria-labelledby="notes-p2">
+        <div class="row">
+            <div class='col-md-12 col-sm-12' align='left'>
+                <div id="needsAnalysis" style="width: 900px;margin:auto;" class="form-control editor"></div>
+
+            </div>
+        </div>
     </div>
 
 </div>

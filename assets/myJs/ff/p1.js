@@ -1,6 +1,6 @@
 function showHide(e) {
     $(`#${e}`).fadeToggle();
-    
+
 }
 $(document).ready(function () {
 
@@ -89,6 +89,22 @@ $(document).ready(function () {
         e.preventDefault();
         $(this).parents('.adviser').remove();
         countAdviser();
+    })
+
+    $('#set-partner-address-same').on('click', function () {
+        let client = $('#pills-client');
+        let partner = $('#pills-partner');
+
+        let stradd = client.find('[data-fld-name=stradd]').val();
+        let suburb = client.find('[data-fld-name=suburb]').val();
+        let city = client.find('[data-fld-name=city]').val();
+        let postcode = client.find('[data-fld-name=postcode]').val();
+        if ($(this).is(':checked')) {
+            partner.find('[data-fld-name=stradd]').val(stradd);
+            partner.find('[data-fld-name=suburb]').val(suburb);
+            partner.find('[data-fld-name=city]').val(city);
+            partner.find('[data-fld-name=postcode]').val(postcode);
+        }
     })
 
 })

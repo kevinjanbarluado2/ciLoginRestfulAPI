@@ -39,10 +39,20 @@
         })
         $('.date-picker').datepicker();
 
-        $('.sw-btn-next').on('click', () => {
+        $('.sw-btn-next, .sw-btn-prev').on('click', () => {
             $(document).scrollTop(0)
+            $('.tab-content').css('height', 'auto')
         })
 
+        //Round off BAYBEEE
+        $(document).on('keyup', '.disable-char', function() {
+            let roundOff = $(this).val().split('.');
+            if (roundOff[1] !== undefined && roundOff[1].length > 2) {
+                let newVal = `${roundOff[0]}.${roundOff[1].substr(0,2)}`;
+                $(this).val(newVal);
+            }
+            return false;
+        })
     });
 </script>
 

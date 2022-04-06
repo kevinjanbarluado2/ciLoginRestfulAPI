@@ -189,7 +189,7 @@ $(function () {
 
 
 
-    $('.editor').Editor({ "font_size": false, "fonts": false, "formatting": false });
+    $('#existingNotes').Editor({ "font_size": false, "fonts": false, "formatting": false });
 
 
 })

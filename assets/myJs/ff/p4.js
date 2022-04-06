@@ -27,7 +27,7 @@ $(document).ready(function () {
         $('.myCard').on('keyup', "[data-fld-name=firstName]", function (e) {
 
             let name = $(this).val();
-            console.log(name);
+            //console.log(name);
             $(this).parents('.myCard').find('.myButton').html(name);
         });
 
@@ -56,7 +56,7 @@ $(document).ready(function () {
     <div class="card-header" id="heading${index}">
         <h2 class="mb-0">
             <button class="btn btn-link myButton" type="button" data-toggle="collapse" data-target="#collapse${index}" aria-expanded="true" aria-controls="collapse${index}">
-                Plan # ${index}
+                Unnamed # ${index}
             </button>
             <button class="btn float-right btn-danger removeMe"><i class="fa fa-trash"></i></button>
         </h2>
