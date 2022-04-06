@@ -273,6 +273,38 @@ $(document).ready(function () {
 
     })
 
+    $('#your_annual_income, #partner_annual_income, #your_other_income').change(function (e) {
+        e.preventDefault();
+        var your_annual_income = $('#your_annual_income').val();
+        var partner_annual_income = $('#partner_annual_income').val();
+        var your_other_income = $('#your_other_income').val();
+
+        var your_income_freq = $('#your_income_freq').val();
+        var partner_income_freq = $('#partner_income_freq').val();
+        var other_income_freq = $('#other_income_freq').val();
+
+        your_annual_income = parseInt(your_annual_income) || 0;
+        partner_annual_income = parseInt(partner_annual_income) || 0;
+        your_other_income = parseInt(your_other_income) || 0;
+
+        your_income_freq = parseInt(your_income_freq) || 0;
+        partner_income_freq = parseInt(partner_income_freq) || 0;
+        other_income_freq = parseInt(other_income_freq) || 0;
+
+        your_annual_income = your_annual_income * your_income_freq;
+        partner_annual_income = partner_annual_income * partner_income_freq;
+        your_other_income = your_other_income * other_income_freq;
+
+        var total = your_annual_income + partner_annual_income + your_other_income;
+        total = parseInt(total);
+        if (total != '' || total > 0) {
+            $('#your_annual_household_income').val(total.toFixed(2));
+        } else {
+            $('#your_annual_household_income').val('');
+        }
+    });
+
+
 
 
 
