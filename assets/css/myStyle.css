@@ -119,3 +119,25 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
+.modal-dialog {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.modal-content {
+  height: auto;
+  min-height: 100%;
+  border-radius: 0;
+  min-width: 100vw;
+}
+
+.modal-title{
+  font-size: 1.25rem !important;
+}
+
+#previewFrame{
+  width: 100%!important;
+  height: 100%!important; 
+}

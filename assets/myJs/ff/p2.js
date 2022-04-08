@@ -304,8 +304,4 @@ $(document).ready(function () {
         }
     });
 
-
-
-
-
 });
